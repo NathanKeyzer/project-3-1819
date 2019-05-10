@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <%- include('partials/head') %>
+ </head>
+ <body>
+   <header>
+     <%- include('partials/header') %>
+   </header>
+   <main>
+     <div class="header">
+       <div class="logo">
+    <img src="https://kv-staging.lifely.nl/assets/img/Brand@2x.png" class="logokandidaat" alt="logo">
+    <h1>Kandidaatvinden</h1>
+    </div>
+     </div>
+     <div class="sidebar">
+       <ul>
+          <li>
+           <p>Peter Peerdeman</p>
+             <p>laatste bericht..</p>
+             <p>1 dag geleden</p>
+          </li>
+         <li>
+           <p>Joost Faber</p>
+             <p>laatste bericht..</p>
+             <p>2 uur geleden</p>
+           </li>
+         <li>
+           <p>Laurens Aarnoudse</p>
+           <p>laatste bericht..</p>
+           <p>1 week geleden</p>
+         </li>
+         <li>
+           <p>Koop Reynders</p>
+           <p>laatste bericht..</p>
+           <p>1 maand geleden</p>
+         </li>
+       </ul>
+     </div>
+     <div class="chat">
+       <ul id="messages"></ul>
+           <form action="">
+             <input id="m" autocomplete="off" placeholder="Schrijf een bericht..." /><button>Versturen</button>
+           </form>
+     </div>
+     <div class="form">
+       <form>
+         <fieldset>
+           <legend>Naam</legend>
+           <input type="text" id="voornaam" name="monster" placeholder="Voornaam">
+           <br/>
+           <input type="text" id="tussenvoegsel" name="tussenvoegsel" placeholder="Tussenvoegsel">
+           <br/>
+           <input type="text" id="achternaam" name="achternaam" placeholder="Achternaam">
+         </fieldset>
+         <fieldset>
+           <legend>Regio</legend>
+           <select class="regio" name="regio">
+             <option value="" disabled selected>Voeg regio toe</option>
+             <option value="Drenthe">Drenthe</option>
+             <option value="Flevoland">Flevoland</option>
+             <option value="Friesland">Friesland</option>
+             <option value="Gelderland">Gelderland</option>
+             <option value="Groningen">Groningen</option>
+             <option value="Limburg">Limburg</option>
+             <option value="Noord-Brabant">Noord-Brabant</option>
+             <option value="Noord-Holland">Noord-Holland</option>
+             <option value="Overijssel">Overijssel</option>
+             <option value="Utrecht">Utrecht</option>
+             <option value="Zeeland">Zeeland</option>
+             <option value="Zuid-Holland">Zuid-Holland</option>
+           </select>
+         </fieldset>
+         <fieldset>
+           <legend>Contactgegevens</legend>
+
+           <input type="text" name="email" value="" placeholder="Email">
+
+           <input type="tel" name="" value="" placeholder="Telefoonnummer">
+         </fieldset>
+
+         <fieldset>
+           <legend>Functies</legend>
+
+           <select class="functies" name="functies">
+             <option value="" disabled selected>Selecteer functie</option>
+            <option value="Docent">Docent</option>
+            <option value="Accountant">Accountant</option>
+            <option value="Tester">Tester</option>
+            <option value="Tester">Elektromonteur</option>
+            <option value="Tester">Uitvoerder bouw</option>
+            <option value="Tester">Servicemonteur</option>
+            <option value="Tester">Calculator bouw</option>
+           </select>
+         </fieldset>
+          <fieldset>
+            <legend>Interressante Bedrijven</legend>
+
+            <select class="bedrijven" name="">
+              <option value="" disabled selected>Selecteer bedrijf</option>
+              <option value="21groep">21groep</option>
+              <option value="4Dotnet">4Dotnet</option>
+              <option value="Aafje">Aafje</option>
+              <option value="HvA">Lifely</option>
+              <option value="HvA">Hogeschool van Amsterdam</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <legend>Goede lead</legend>
+            <input type="radio" name="radio" id="ja" value="">
+            <label for="ja">Ja</label>
+            <input type="radio" name="radio" id="nee" value="">
+            <label for="nee">Nee</label>
+          </fieldset>
+          <fieldset>
+            <legend>Notes</legend>
+            <textarea name="name" rows="8" cols="50" placeholder="Voer extra notities in"></textarea>
+          </fieldset>
+       </form>
+
+     </div>
+
+   </main>
+
+
+   <footer>
+     <%- include('partials/footer') %>
+   </footer>
+
+   <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+  <script>
+  $(function () {
+    var socket = io();
+    $('form').submit(function(e){
+      e.preventDefault(); // prevents page reloading
+      socket.emit('chat message', $('#m').val());
+      $('#m').val('');
+      return false;
+    });
+    socket.on('chat message', function(msg){
+      $('#messages').append($('<li>').text(msg));
+    });
+  });
+</script>
+ </body>
+
+</html>
