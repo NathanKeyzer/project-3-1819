@@ -60,3 +60,5 @@ De bestaande functionaliteit vanuit de intermediair naar de kandidaat toe. Van h
 #### Extra feaure
 
 Keuze uit verschillende bedrijven hierbij een link maken van het bedrijf zodat er een info pagina tevoorschijn kan komen met informatie over het bedrijf zodat de kandidaat wat meer te weten komt.
+
+![extra](https://github.com/NathanKeyzer/project-3-1819/blob/master/public/images/extra.png)
