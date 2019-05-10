@@ -10,7 +10,6 @@ Kandidaatvinden.nl
 ## Table of Content
 - [Omschrijving van de case](omschrijvingvandecase)
 - [Onderzoek](onderzoek)
-- [Reproduceren](reproduceren)
 - [Uitbreiden](uitbreiden)
 
 ## Omschrijving van de case
@@ -51,23 +50,13 @@ Elk van deze actoren heeft zo zijn eigen functionaliteiten.
 </p>
 </details>
 
-## Reproduceren
-
-
 ## Uitbreiden
 
 De bestaande functionaliteit vanuit de intermediair naar de kandidaat toe. Van het voorstellen van bedrijven heb ik willen uitbreiden. Nu is het zo dat je Max. 3 bedrijven kan voorstellen aan de kandidaat. Deze 3 bedrijven worden als een soort van checklist weergegeven. Hieruit kan de kandidaat dan een keuze maken.
 
-![huidig](ahhahaha)
-
-### Feedback over functioneren
-Je hebt een leergierig, gedreven en zelfredzame houding nodig om de minor te kunnen halen. Welke vaardigheden heb je laten zien? Onderzoekend vermogen? Creativiteit? Conceptueel? In hoeverre komen je houding en verworven vaardigheden overeen met wat een frontender in de praktijk nodig heeft?
+![huidig](https://github.com/NathanKeyzer/project-3-1819/blob/master/public/images/huidig.png)
 
 
-### Oplevering & criteria
-- Presentatie met je bevindingen bij de opdrachtgever.
-
----
-#### extra feaures
+#### Extra feaure
 
 Keuze uit verschillende bedrijven hierbij een link maken van het bedrijf zodat er een info pagina tevoorschijn kan komen met informatie over het bedrijf zodat de kandidaat wat meer te weten komt.
